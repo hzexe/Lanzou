@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFrameworks>netcoreapp3.0;netcoreapp2.0;net461;netstandard2.0;</TargetFrameworks>
+    <Title>蓝奏云开发库</Title>
+    <Version>0.1.1</Version>
+    <AssemblyVersion>0.1.1.0</AssemblyVersion>
+    <PackageId>LanzouLibrary</PackageId>
+    <Authors>Hzexe</Authors>
+    <Company />
+    <Product>Lanzou Library</Product>
+    <Description>适配蓝奏云目录操作，文件上传下载等支持</Description>
+    <PackageTags>蓝奏</PackageTags>
+    <PackageProjectUrl>https://github.com/hzexe/Lanzou</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hzexe/Lanzou</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <licenseUrl>https://raw.githubusercontent.com/hzexe/Lanzou/master/LICENSE</licenseUrl>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net461'">
+    <PackageReference Include="System.Net.Http" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'!='netcoreapp3.0'">
+    <PackageReference Include="System.Text.Json" Version="4.6.0" />
+  </ItemGroup>
+
+</Project>
