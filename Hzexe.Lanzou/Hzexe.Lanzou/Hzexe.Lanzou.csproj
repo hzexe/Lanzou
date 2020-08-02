@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
     <TargetFrameworks>netcoreapp3.0;netcoreapp2.0;net461;netstandard2.0;</TargetFrameworks>
     <Title>蓝奏云开发库</Title>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <AssemblyVersion>0.1.2.0</AssemblyVersion>
     <PackageId>LanzouLibrary</PackageId>
     <Authors>Hzexe</Authors>
