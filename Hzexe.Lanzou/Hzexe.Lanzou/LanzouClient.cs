@@ -27,7 +27,7 @@ namespace Hzexe.Lanzou
             {
                 string[] cookieNameValue = str.Split('=');
                 Cookie ck = new Cookie(cookieNameValue[0].Trim().ToString(), cookieNameValue[1].Trim().ToString());
-                ck.Domain = "up.woozooo.com";
+                ck.Domain = ".woozooo.com";
                 cookieContainer.Add(ck);
             }
 #if NETCOREAPP3_0
@@ -161,6 +161,7 @@ namespace Hzexe.Lanzou
             dic.Add("folder_description", folder_description);
             var encodedContent = new FormUrlEncodedContent(dic);
             client.DefaultRequestHeaders.Add("user-agent", userAgent);
+            client.DefaultRequestHeaders.Add("x-requested-with", "XMLHttpRequest");
             client.DefaultRequestHeaders.Add("referer", refer);
             string json = null;
             try
