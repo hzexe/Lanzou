@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Hzexe.LanzouTests": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

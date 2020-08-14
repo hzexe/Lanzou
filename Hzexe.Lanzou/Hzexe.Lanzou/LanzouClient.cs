@@ -202,10 +202,27 @@ namespace Hzexe.Lanzou
             res = await client.GetAsync(frame);
             res.EnsureSuccessStatusCode();
             html = await res.Content.ReadAsStringAsync();
-            var mc = Regex.Match(html, @"data : (\{.{60,}?\})");
-            var json = mc.Groups[1].Value.Replace("'", "\"");
-            JsonDocument json1 = JsonDocument.Parse(json);
-            var ps = json1.RootElement.EnumerateObject().Select(x => new KeyValuePair<string, string>(x.Name, x.Value.ToString()));
+            /*
+            var cgcroc = 'UDYHOV1sBzZUXQs0CjoHO1c_aV2UEYgA0Cj9bZFM6Bz8JL1V2D29UMQFiA2wHZFVnA2ADNwVtBzwDPA_c_c';//var harse = 'ate';
+		var pposturl = '?v2';//var harse = harse;var cess = cess;
+			//var ajaxup = '';
+		$.ajax({
+			type : 'post',
+			url : '/ajaxm.php',
+			//data : { 'action':'downprocess','sign':pposturl,'ves':1 },
+		data : { 'action':'downprocess','sign':cgcroc,'ves':1 }, 
+             */
+
+            var mc = Regex.Match(html, @"var cgcroc = '(.+?)'");
+            //var json = mc.Groups[1].Value.Replace("'", "\"");
+            //JsonDocument json1 = JsonDocument.Parse(json);
+            //var ps = json1.RootElement.EnumerateObject().Select(x => new KeyValuePair<string, string>(x.Name, x.Value.ToString()));
+            Dictionary<string, string> ps = new Dictionary<string, string>(5)
+            {
+            { "action","downprocess"},
+            { "sign",mc.Groups[1].Value},
+            { "ves","1"},
+            };
             FormUrlEncodedContent encodedContent = new FormUrlEncodedContent(ps);
             //var postContent = new StringContent(json, Encoding.UTF8, "application/json");
             var linkUrl = hostbase + "/ajaxm.php";
